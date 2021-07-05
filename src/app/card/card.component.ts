@@ -39,4 +39,9 @@ export class cardComponent {
   //   this.disabled = true
   //   }, timeout: 3000)
   // }
+
+  // Event binding
+  changeTitle() {
+    this.title = 'Заголовок изменен'
+  }
 }
