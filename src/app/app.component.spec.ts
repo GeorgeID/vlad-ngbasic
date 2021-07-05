@@ -1,3 +1,4 @@
+// Файл для работы с Unit-тестами 
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
