@@ -5,22 +5,29 @@
     <p>{{text}}</p>
     <!-- <strong>Номер: {{number}}</strong> -->
     <!-- <em>{{array}}</em> -->
-    <pre>{{obj|json}}</pre>
-    <p>{{textObj}}</p>
+    <!-- <pre>{{obj|json}}</pre> -->
+    <!-- <p>{{textObj}}</p> -->
 
     <p>{{ getInfo() }}</p>
 
     <div>
-        <img src="{{imgUrl}}">
+        <img src="{{ imgUrl }}">
         <!-- <img src="{{imgUrl2}}"> -->
         <!-- TODO  binding method bugfix -->
         <!-- <img [src]="imgUrl"> -->
         <!-- <br>
         <button [disabled]="disabled">Enable</button> -->
     </div>
-    <div>
+    <div class="buttons">
         <button (click)="changeTitle()">Изменить заголовок</button>
-        <button (click)="title='inline заголовок?'">Изменить заголовок inline?</button>
+        <button (click)="title='inline заголовок'">Изменить заголовок inline?</button>
+    </div>
+    <div>
+        <!-- 1 two-way binding -->
+        <!-- <input type="text" (input)="inputHandler($event)" [value]="title"> -->
+        <!-- 2 two-way binding -->
+        <input type="text" #myInput (input)="inputHandler(myInput.value)" [value]="title">
+
     </div>
 
 </div>
