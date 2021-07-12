@@ -1,9 +1,21 @@
 <div class="container">
   <h1>Привет, Владилен</h1>
-  
+  <hr>
+  <!-- Директивы упраления отображаемости элементов = -->
+  <!-- Скрыть или показать карточки -->
+  <!-- 1. Добавляем метод toggleCards -->
+  <button (click)="toggleCards()">Переключение видимости карточек</button>
+  <hr>
   <!-- <app-form></app-form> -->
-  
-  <app-card></app-card>
-  <app-card></app-card>
-  <app-card></app-card>
+  <!-- 2. оборачиваем карточки в <div></div> 
+       3. структурные дерективы -->
+  <div *ngIf="toggle; else noCards">
+    <app-card></app-card>
+    <app-card></app-card>
+    <app-card></app-card>
+  </div>
+  <!-- 4. условие else к *ngIf путем создания спецкомпонента -->
+  <ng-template #noCards>
+    <p>Карточки скрыты!</p>
+  </ng-template>
 </div>
