@@ -13,6 +13,13 @@ export class cardComponent {
   title = 'Мой заголовок карточки';
   text =
     'Этот текст - пример интерполяции переменной text класса cardComponent';
+  // Расхождение в определении property с Владом
+  // Свойство "textColor" не имеет инициализатора, и ему не гарантировано присваивание в конструкторе.ts(2564)
+  // (property) cardComponent.textColor: string
+  // textColor: string;
+  textColor: string | undefined;
+
+  // textColor = "black";
   // number = 42;
   // array = [1, 1, 2, 3, 5, 8, 12];
   // obj = {
@@ -54,8 +61,8 @@ export class cardComponent {
   inputHandler(value: string) {
     this.title = value;
   }
-   // 3 two-way binding с помощью включения модуля FormsModule
-   changeHandler() {
-    console.log(this.title)
+  // 3 two-way binding с помощью включения модуля FormsModule
+  changeHandler() {
+    console.log(this.title);
   }
 }
