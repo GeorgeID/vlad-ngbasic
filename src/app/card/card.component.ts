@@ -13,10 +13,12 @@ export class cardComponent {
   title = 'Мой заголовок карточки';
   text =
     'Этот текст - пример интерполяции переменной text класса cardComponent';
+
+  // Директива [ngClass] с добавлением классов
   // Расхождение в определении property с Владом
   // Свойство "textColor" не имеет инициализатора, и ему не гарантировано присваивание в конструкторе.ts(2564)
   // (property) cardComponent.textColor: string
-  // textColor: string;
+  // textColor: string; ->
   textColor: string | undefined;
 
   // textColor = "black";
