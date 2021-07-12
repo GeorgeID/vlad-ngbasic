@@ -20,14 +20,17 @@
     </div>
     <div class="buttons">
         <button (click)="changeTitle()">Изменить заголовок</button>
-        <button (click)="title='inline заголовок'">Изменить заголовок inline?</button>
+        <button (click)="title='inline заголовок'">Изменить заголовок inline</button>
     </div>
+    <!-- <div>-->
+    <!-- 1 two-way binding -->
+    <!-- <input type="text" (input)="inputHandler($event)" [value]="title"> -->
+    <!-- 2 two-way binding -->
+    <!-- <input type="text" #myInput (input)="inputHandler(myInput.value)" [value]="title"> -->
+    <!-- </div>  -->
+
+    <!-- 3 two-way binding спомощь включения модуля FormsModule -->
     <div>
-        <!-- 1 two-way binding -->
-        <!-- <input type="text" (input)="inputHandler($event)" [value]="title"> -->
-        <!-- 2 two-way binding -->
-        <input type="text" #myInput (input)="inputHandler(myInput.value)" [value]="title">
-
+        <input type="text" [(ngModel)]="title" (ngModelChange)="changeHandler()">
     </div>
-
 </div>

@@ -45,13 +45,17 @@ export class cardComponent {
   changeTitle() {
     this.title = 'Заголовок был изменен';
   }
-  // // 1 - two-way binding
+  // // 1 two-way binding
   // inputHandler(event: any) {
   //   const value = event.target.value;
   //   this.title = value;
   // }
-  // 1 - two-way binding
+  // 2 two-way binding
   inputHandler(value: string) {
     this.title = value;
+  }
+   // 3 two-way binding с помощью включения модуля FormsModule
+   changeHandler() {
+    console.log(this.title)
   }
 }
