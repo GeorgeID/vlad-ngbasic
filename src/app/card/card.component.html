@@ -1,7 +1,13 @@
 <div class="card">
-    <h2>{{title}}</h2>
+    <!-- Директива [ngStyle] синтаксис и функционал -->
+    <h2 [ngStyle]="{
+        color: title.length < 5 ? 'blue' : 'green',
+        fontWeight: title.length < 7 ? 'bold': 'normal'
+    }">{{title}}</h2>
+
     <p>Таким образом управление и развитие структуры способствует подготовке и реализации дальнейших направлений
         развития.</p>
+
     <p>{{text}}</p>
     <!-- <strong>Номер: {{number}}</strong> -->
     <!-- <em>{{array}}</em> -->
