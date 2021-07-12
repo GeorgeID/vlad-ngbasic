@@ -9,12 +9,20 @@
         развития.</p>
     <!-- <p>{{text}}</p> -->
 
-    <!-- Директива [ngClass] с добавлением классов -->
-    <p class="text" [ngClass]= "{
+    <!-- Директива [ngClass] с добавлением классов 1 метод -->
+    <!-- <p class="text" [ngClass]= "{
         blue: textColor === 'blue',
         green: textColor === 'green',
         red: textColor === 'red'
-    }">{{text}}</p>
+    }">{{text}}</p> -->
+
+    <!-- Директива [ngClass] с добавлением классов 2 метод синтаксис-->
+    <p class="text" 
+    [class.blue]="textColor === 'blue'"
+    [class.green]="textColor === 'green'"
+    [class.red]="textColor === 'red'"
+    >{{text}}</p>
+    
     <div class="buttons">
         <button (click)="textColor='blue'">Цвет текста - синий</button>
         <button (click)="textColor='green'">Цвет текста - зеленый</button>
