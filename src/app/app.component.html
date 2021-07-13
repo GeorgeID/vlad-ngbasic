@@ -9,11 +9,19 @@
   <!-- <app-form></app-form> -->
   <!-- 2. оборачиваем карточки в <div></div> 
        3. структурные дерективы -->
+  <!-- <div *ngIf="toggle; else noCards">
+    <app-card></app-card>
+    <app-card></app-card>
+    <app-card></app-card>
+  </div> -->
+
+  <!-- Директивы работы *ngIf, *ngFor с коллекцией элементов -->
+  <!-- 4. итерация массива cards[] -->
+  <!-- 5. передаем через binding параметр card-->
   <div *ngIf="toggle; else noCards">
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
+    <app-card *ngFor="let iterCard of cards" [card]="iterCard"></app-card>
   </div>
+ 
   <!-- 4. условие else к *ngIf путем создания спецкомпонента -->
   <ng-template #noCards>
     <p>Карточки скрыты!</p>

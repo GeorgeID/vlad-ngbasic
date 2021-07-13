@@ -1,6 +1,7 @@
 // TODO  binding method bugfix - замена logo Angular
 // import { Component, OnInit } from '@angular/core';
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Card } from '../app.component';
 
 @Component({
   selector: 'app-card',
@@ -9,17 +10,29 @@ import { Component } from '@angular/core';
 })
 // TODO  binding method bugfix = замена logo Angular, button
 // export class cardComponent implements OnInit {
-export class cardComponent {
-  title = 'Мой заголовок карточки';
-  text =
+export class cardComponent implements OnInit {
+  // Директивы работы *ngIf, *ngFor с коллекцией элементов
+  // 5. добавляем декоратор на лок.переменную
+  // Директивы работы *ngIf, *ngFor с коллекцией элементов
+  // 5. добавляем декоратор на лок.переменную
+  @Input()
+  card!: Card;
+  // исправлено ->
+  // @Input() card: Card | undefined;
+
+  title: string = 'Мой заголовок карточки';
+  text: string =
     'Этот текст - пример интерполяции переменной text класса cardComponent';
 
-  // Директива [ngClass] с добавлением классов
+    // Директива [ngClass] с добавлением классов
   // Расхождение в определении property с Владом
   // Свойство "textColor" не имеет инициализатора, и ему не гарантировано присваивание в конструкторе.ts(2564)
   // (property) cardComponent.textColor: string
-  // textColor: string; ->
-  textColor: string | undefined;
+  // textColor: string;
+  //  ->
+  // textColor: string | undefined;- не работает
+  textColor!: string;
+
 
   // textColor = "black";
   // number = 42;
@@ -49,10 +62,10 @@ export class cardComponent {
   //   this.disabled = true;
   //   }, timeout: 3000)
   // }
-
+  ngOnInit() {}
   // Event binding
   changeTitle() {
-    this.title = 'Заголовок был изменен';
+    this.card.title = 'Заголовок был изменен';
   }
   // // 1 two-way binding
   // inputHandler(event: any) {
