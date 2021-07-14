@@ -58,9 +58,11 @@
         <input type="text" [(ngModel)]="card.title" (ngModelChange)="changeHandler()">
     </div>
 
-    <!-- пайпы-трансформеры внутри шаблона + интернализация 2 -? -->
+    <!-- пайпы-трансформеры внутри шаблона + интернализация 2 -->
     <div><strong>{{ cardDate |date:'dd.MM.yyyy HH.mm.ss'}}</strong></div>
     <div><strong>{{ cardDate |date:'dd MMMM yyyy HH.mm.ss'}}</strong></div>
+    <!-- интернализация даты - bug -->
+    <!-- <div><strong>{{ cardDate |date:'dd MMMM yyyy HH.mm.ss':null:'ru'}}</strong></div> -->
 
 
 </div>
