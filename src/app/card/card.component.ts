@@ -1,5 +1,6 @@
 // TODO  binding method bugfix - замена logo Angular
 // import { Component, OnInit } from '@angular/core';
+import { DatePipe } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Card } from '../app.component';
 
@@ -20,11 +21,20 @@ export class cardComponent implements OnInit {
   // исправлено ->
   // @Input() card: Card | undefined;
 
+  // Ввод индексов для каждого элемента 2
+  // @Input() index: number;;
+  // исправлено ->
+  @Input()
+  index!: number;
+
   title: string = 'Мой заголовок карточки';
   text: string =
     'Этот текст - пример интерполяции переменной text класса cardComponent';
 
-    // Директива [ngClass] с добавлением классов
+  // пайпы-трансформеры внутри шаблона 1 -?
+  cardDate: Date = new Date();
+
+  // Директива [ngClass] с добавлением классов
   // Расхождение в определении property с Владом
   // Свойство "textColor" не имеет инициализатора, и ему не гарантировано присваивание в конструкторе.ts(2564)
   // (property) cardComponent.textColor: string
@@ -32,7 +42,6 @@ export class cardComponent implements OnInit {
   //  ->
   // textColor: string | undefined;- не работает
   textColor!: string;
-
 
   // textColor = "black";
   // number = 42;

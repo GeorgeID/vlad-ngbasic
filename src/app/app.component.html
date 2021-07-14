@@ -18,10 +18,15 @@
   <!-- Директивы работы *ngIf, *ngFor с коллекцией элементов -->
   <!-- 4. итерация массива cards[] -->
   <!-- 5. передаем через binding параметр card-->
+
+  <!-- Ввод индексов для каждого элемента 1 -->
   <div *ngIf="toggle; else noCards">
-    <app-card *ngFor="let iterCard of cards" [card]="iterCard"></app-card>
+    <app-card *ngFor="let iterCard of cards; let idx=index" 
+    [card]="iterCard" 
+    [index]="idx+1"
+    ></app-card>
   </div>
- 
+
   <!-- 4. условие else к *ngIf путем создания спецкомпонента -->
   <ng-template #noCards>
     <p>Карточки скрыты!</p>

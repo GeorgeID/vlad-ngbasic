@@ -3,7 +3,8 @@
     <h2 [ngStyle]="{
         color: card.title.length < 5 ? 'blue' : 'green',
         fontWeight: card.title.length < 7 ? 'bold': 'normal'
-    }">{{card.title}}</h2>
+    }">{{ index }} {{card.title}}</h2>
+    <!-- Ввод индексов для каждого элемента 3 -->
 
     <p>Таким образом управление и развитие структуры способствует подготовке и реализации дальнейших направлений
         развития.</p>
@@ -56,4 +57,10 @@
     <div>
         <input type="text" [(ngModel)]="card.title" (ngModelChange)="changeHandler()">
     </div>
+
+    <!-- пайпы-трансформеры внутри шаблона + интернализация 2 -? -->
+    <div><strong>{{ cardDate |date:'dd.MM.yyyy HH.mm.ss'}}</strong></div>
+    <div><strong>{{ cardDate |date:'dd MMMM yyyy HH.mm.ss'}}</strong></div>
+
+
 </div>
